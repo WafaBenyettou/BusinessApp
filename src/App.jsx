@@ -1,16 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import styles from "./style";
+import {
+  Billing,
+  Business,
+  CardDeal,
+  Clients,
+  CTA,
+  Footer,
+  Navbar,
+  Stats,
+  Testimonials,
+  Hero,
+} from "./components";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => (
+  <div className="bg-primary w-full overflow-hidden">
+    <div className={`${styles.paddingX} ${styles.flexCenter}`}>
+      <div className={`${styles.boxWidth}`}>
+        <Navbar />
+      </div>
+    </div>
 
-  return (
-    <>
-     <h1>Hello</h1>
-    </>
-  )
-}
+    <div className={`bg-primary ${styles.flexStart}`}>
+      <div className={`${styles.boxWidth}`}>
+        <Hero />
+      </div>
+    </div>
 
-export default App
+    <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
+      <div className={`${styles.boxWidth}`}>
+        <Stats />
+        <Business />
+        <Billing />
+        <CardDeal />
+        <Testimonials />
+        <Clients />
+        <CTA />
+        <Footer />
+      </div>
+    </div>
+  </div>
+);
+
+export default App;
